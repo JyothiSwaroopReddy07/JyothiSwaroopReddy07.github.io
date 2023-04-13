@@ -4,17 +4,17 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Posts | Awesome Hugo blog</title>
-<meta property="og:title" content="Posts | Awesome Hugo blog" />
-<meta name="twitter:title" content="Posts | Awesome Hugo blog" />
-<meta itemprop="name" content="Posts | Awesome Hugo blog" />
-<meta name="application-name" content="Posts | Awesome Hugo blog" />
+<title itemprop="name">And then there were tests | Awesome Hugo blog</title>
+<meta property="og:title" content="And then there were tests | Awesome Hugo blog" />
+<meta name="twitter:title" content="And then there were tests | Awesome Hugo blog" />
+<meta itemprop="name" content="And then there were tests | Awesome Hugo blog" />
+<meta name="application-name" content="And then there were tests | Awesome Hugo blog" />
 <meta property="og:site_name" content="Awesome hugo blog" />
 
-<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
-<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="description" content="Google summer of code week 12">
+<meta itemprop="description" content="Google summer of code week 12" />
+<meta property="og:description" content="Google summer of code week 12" />
+<meta name="twitter:description" content="Google summer of code week 12" />
 
 <meta property="og:locale" content="en-us" />
 <meta name="language" content="en-us" />
@@ -33,11 +33,6 @@
     
     
     
-    <link rel="first" href="/posts/" />
-    <link rel="last" href="/posts/" />
-    
-    
-    
 
     <meta property="og:type" content="article" />
     <meta property="og:article:published_time" content=2020-08-16T00:00:00Z />
@@ -51,14 +46,14 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Posts",
+        "headline": "And then there were tests",
         "author": {
         "@type": "Person",
         "name": ""
         },
         "datePublished": "2020-08-16",
-        "description": "",
-        "wordCount":  0 ,
+        "description": "Google summer of code week 12",
+        "wordCount":  343 ,
         "mainEntityOfPage": "True",
         "dateModified": "2020-08-16",
         "image": {
@@ -76,9 +71,7 @@
 
   
 
-  <link rel="canonical" href="https://JyothiSwaroopReddy07.github.io/posts/">
-  <link href="https://JyothiSwaroopReddy07.github.io/posts/index.xml" rel="alternate" type="application/rss+xml" title="Awesome Hugo blog">
-  <link href="https://JyothiSwaroopReddy07.github.io/posts/index.xml" rel="feed" type="application/rss+xml" title="Awesome Hugo blog"><link href="/sass/main.min.0eebb6db90b4ec9f4444ef402f08421ee056025ba860df3d749a9f299d472008.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+  <link rel="canonical" href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-16/"><link href="/sass/main.min.0eebb6db90b4ec9f4444ef402f08421ee056025ba860df3d749a9f299d472008.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
   
 
@@ -159,219 +152,66 @@ stroke-linejoin="round" class="feather feather-home">
     </div>
   </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Posts</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2020</h2>
+        <article>
+            <header class="header">
+                <h1 class="header-title">And then there were tests</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2020-08-16T00:00:00&#43;00:00" itemprop="datePublished"> Aug 16, 2020 </time>
+                </div>
+            </header>
+            <div class="page-content">
+                <p>Setting up <a href="https://github.com/DevoLearn/devolearn/blob/master/devolearn/tests/test.py">unit tests for devolearn</a> was actually the first time that I was ever touching those testing libraries. While setting up the tests, <a href="https://realpython.com/python-testing/">this</a> came to be the most useful resource I found.</p>
+<h2 id="why-do-we-even-need-tests-">Why do we even need tests ?</h2>
+<p>It is safe to assume that one day more contributors would come to <a href="https://github.com/DevoLearn/devolearn">devolearn</a>. When a future contributor makes a pull request, these tests would make sure that the pull requests are not breaking the code, and the tests would work as an early warning system if a pull request does break the code.</p>
+<p>In our case, we used <a href="https://travis-ci.org/">travis CI</a> to run our tests online after each push/pull request. For this we had to set up a <code>.travis.yml</code> file on the same diirectory as the <code>setup.py</code>.</p>
+<p>A <code>.travis.yml</code> file looks like:</p>
+<pre tabindex="0"><code>language: python
+python:
+  - &quot;3.7&quot;
+  - &quot;3.8&quot;
 
-        
+dist: bionic
 
-        
+install: 
+  - pip install .
+  - pip install -r requirements.txt
+script:  
+  - python setup.py test 
 
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-16/">And then there were tests</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-16T00:00:00Z">
-        Aug 16, 2020
-    </time>
-</article>
+</code></pre><p>I will break down the file bit by bit:</p>
+<ul>
+<li>
+<p><code>language: python</code> : Because we&rsquo;ll be running the tests on python.</p>
+</li>
+<li>
+<p><code>python:</code> This section specifies the versions of python on which we&rsquo;ll be running the tests.</p>
+</li>
+<li>
+<p><code>install:</code> Specifies the terminal commands one would need to run in order to install the required libraries.</p>
+</li>
+<li>
+<p><code>script:</code> Specifies the terminal command(s) needed to run the test(s).</p>
+</li>
+</ul>
+<p>On top of that, I had to add this to the <code>setup()</code> function in <code>setup.py</code>:</p>
+<pre tabindex="0"><code>test_suite='nose.collector',
+tests_require=['nose']
+</code></pre><p>And as for the test functions themselves, the were pretty easy to set up. It was as simple as calling all the functions within a subclass of <code>unittest.TestCase</code>. One of the tests in the devolearn unit tests looks like as follows:</p>
+<pre tabindex="0"><code>centroid_df = segmentor.predict_from_video(&lt;args&gt;)
 
+self.assertTrue(isinstance(centroid_df, pd.DataFrame), &quot;should be a pandas.DataFrame&quot;)
+</code></pre><p>The snippet above makes sure that the object returned from the function <code>predict_from_video()</code> is a <code>pandas.DataFrame</code>. If something ever breaks in between, then this test would fail with the message in the 2nd arg of <code>self.assertTrue</code>.</p>
+<p>After about an hour worth of errors and debugging, I was finally able to make this <a href="https://api.travis-ci.org/DevoLearn/devolearn.svg?branch=master&amp;status=passed">weird flex</a> on the readme.</p>
 
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-9/">Publishing a PyPI package</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-09T00:00:00Z">
-        Aug 9, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-aug-2/">Hello DevoLearn</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-02T00:00:00Z">
-        Aug 2, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-aug-2/">Hello DevoLearn</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-02T00:00:00Z">
-        Aug 2, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-26/">Training a GAN</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-26T00:00:00Z">
-        Jul 26, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-19/">Finally the bridge works now</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-19T00:00:00Z">
-        Jul 19, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-12/">Cleaning up the bridge</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-12T00:00:00Z">
-        Jul 12, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-5/">Building a bridge</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-05T00:00:00Z">
-        Jul 5, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-21/">Training the segmentation model</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-21T00:00:00Z">
-        Jun 21, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-14/">PCA and semantic segmentation</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-11T00:00:00Z">
-        Jun 11, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-7/">The &#34;EPIC&#34; dataset</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-06T00:00:00Z">
-        Jun 6, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-31/">Finding patterns</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-31T00:00:00Z">
-        May 31, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-24/">Exploring the Movement Database</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-24T00:00:00Z">
-        May 24, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-17/">Hello Openworm</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-17T00:00:00Z">
-        May 17, 2020
-    </time>
-</article>
-
-
-         
-
-         
-
+            </div>
+        </article>
     </main>
-</div><footer class="footer">
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 

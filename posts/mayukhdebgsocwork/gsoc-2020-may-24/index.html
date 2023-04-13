@@ -4,17 +4,17 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Posts | Awesome Hugo blog</title>
-<meta property="og:title" content="Posts | Awesome Hugo blog" />
-<meta name="twitter:title" content="Posts | Awesome Hugo blog" />
-<meta itemprop="name" content="Posts | Awesome Hugo blog" />
-<meta name="application-name" content="Posts | Awesome Hugo blog" />
+<title itemprop="name">Exploring the Movement Database | Awesome Hugo blog</title>
+<meta property="og:title" content="Exploring the Movement Database | Awesome Hugo blog" />
+<meta name="twitter:title" content="Exploring the Movement Database | Awesome Hugo blog" />
+<meta itemprop="name" content="Exploring the Movement Database | Awesome Hugo blog" />
+<meta name="application-name" content="Exploring the Movement Database | Awesome Hugo blog" />
 <meta property="og:site_name" content="Awesome hugo blog" />
 
-<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
-<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="description" content="Google summer of code week 2">
+<meta itemprop="description" content="Google summer of code week 2" />
+<meta property="og:description" content="Google summer of code week 2" />
+<meta name="twitter:description" content="Google summer of code week 2" />
 
 <meta property="og:locale" content="en-us" />
 <meta name="language" content="en-us" />
@@ -33,15 +33,10 @@
     
     
     
-    <link rel="first" href="/posts/" />
-    <link rel="last" href="/posts/" />
-    
-    
-    
 
     <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2020-08-16T00:00:00Z />
-    <meta property="article:published_time" content=2020-08-16T00:00:00Z />
+    <meta property="og:article:published_time" content=2020-05-24T00:00:00Z />
+    <meta property="article:published_time" content=2020-05-24T00:00:00Z />
 
     
 
@@ -51,16 +46,16 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Posts",
+        "headline": "Exploring the Movement Database",
         "author": {
         "@type": "Person",
         "name": ""
         },
-        "datePublished": "2020-08-16",
-        "description": "",
-        "wordCount":  0 ,
+        "datePublished": "2020-05-24",
+        "description": "Google summer of code week 2",
+        "wordCount":  302 ,
         "mainEntityOfPage": "True",
-        "dateModified": "2020-08-16",
+        "dateModified": "2020-05-24",
         "image": {
         "@type": "imageObject",
         "url": ""
@@ -76,9 +71,7 @@
 
   
 
-  <link rel="canonical" href="https://JyothiSwaroopReddy07.github.io/posts/">
-  <link href="https://JyothiSwaroopReddy07.github.io/posts/index.xml" rel="alternate" type="application/rss+xml" title="Awesome Hugo blog">
-  <link href="https://JyothiSwaroopReddy07.github.io/posts/index.xml" rel="feed" type="application/rss+xml" title="Awesome Hugo blog"><link href="/sass/main.min.0eebb6db90b4ec9f4444ef402f08421ee056025ba860df3d749a9f299d472008.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+  <link rel="canonical" href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-24/"><link href="/sass/main.min.0eebb6db90b4ec9f4444ef402f08421ee056025ba860df3d749a9f299d472008.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
   
 
@@ -159,219 +152,56 @@ stroke-linejoin="round" class="feather feather-home">
     </div>
   </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Posts</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2020</h2>
+        <article>
+            <header class="header">
+                <h1 class="header-title">Exploring the Movement Database</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2020-05-24T00:00:00&#43;00:00" itemprop="datePublished"> May 24, 2020 </time>
+                </div>
+            </header>
+            <div class="page-content">
+                <p>After week 1, the new priority was to find the right data on the internet. I started the week off by reading papers based on locomotion in the C. elegans worm. Surprisingly enough (or unsurprisingly, depending on how much you&rsquo;re into worms), most of the data was from the <a href="http://movement.openworm.org/">OpenWorm Movement Database</a>.</p>
+<p>Almost all the video data on the database is from the <a href="https://github.com/ver228/tierpsy-tracker">Tierpsy tracker</a>, which is an amazing worm tracking tool in itself. But there was a new hurdle now.</p>
+<figure><img src="https://raw.githubusercontent.com/Mayukhdeb/blog/master/content/post/images/may_24/initial_image.png" width="60%"/>
+</figure>
 
-        
+<p>The issue with the video data (as seen above) wThe issue with the video data (as seen above) was that the worms were &ldquo;partially segmented out&rdquo;. Which meant that the background was all blacked out except for a small &ldquo;padding area&rdquo; around the worm. This &ldquo;padding area&rdquo; was a good safety measure on the Tierpsy tracker&rsquo;s side, but was a minor hurdle  for someone who wanted to segment out just the worm from the image in order to gain inferences from behavioural dynamics.</p>
+<p>This hurdle was taken care of in 3 stages:</p>
+<figure><img src="https://raw.githubusercontent.com/Mayukhdeb/blog/master/content/post/images/may_24/OW_movement_database_pipeline.png" width="100%"/>
+</figure>
 
-        
+<ol>
+<li>
+<p>Stage 1: Extracting the &ldquo;padding region&rdquo; around the worm with <a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_thresholding/py_thresholding.html"><code>cv2.threshold()</code></a></p>
+</li>
+<li>
+<p>Stage 2: Removing the padding region by using <a href="https://docs.opencv.org/master/d0/d86/tutorial_py_image_arithmetics.html"><code>cv2.bitwise_and()</code></a> between the real and the thresholded image</p>
+</li>
+<li>
+<p>Removing any extra noise (as seen on stage 2) with <a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_morphological_ops/py_morphological_ops.html"><code>cv2.erode()</code></a></p>
+</li>
+</ol>
+<p>Now the next objecive was to extract the head and tail, this was done  using corner detection with <a href="https://docs.opencv.org/2.4/modules/imgproc/doc/feature_detection.html#goodfeaturestotrack"><code>cv2.goodFeaturesToTrack()</code></a> with <code>maxCorners = 2</code> to only capture the 2 most prominent corners.</p>
+<figure><img src="https://raw.githubusercontent.com/Mayukhdeb/blog/master/content/post/images/may_24/head_and_tail.png" width="60%"/>
+</figure>
 
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-16/">And then there were tests</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-16T00:00:00Z">
-        Aug 16, 2020
-    </time>
-</article>
+<p>To complete the skeletonization, all that was needed now was to skeletonize the main body, and that was done with the very self explanatory function named <a href="https://scikit-image.org/docs/dev/auto_examples/edges/plot_skeleton.html"><code>skimage.morphology.skeletonize()</code></a>. Combined with two circles which signify the head and the tail, we get a clean skeleton which can now be used for analysis on a bigger scale with a large number of frames.</p>
+<p><figure><img src="https://raw.githubusercontent.com/Mayukhdeb/blog/master/content/post/images/may_24/skeleton.png" width="60%"/>
+</figure>
 
+<figure><img src="https://raw.githubusercontent.com/Mayukhdeb/blog/master/content/post/images/may_24/skeleton_long.png" width="60%"/>
+</figure>
+</p>
 
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-9/">Publishing a PyPI package</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-09T00:00:00Z">
-        Aug 9, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-aug-2/">Hello DevoLearn</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-02T00:00:00Z">
-        Aug 2, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-aug-2/">Hello DevoLearn</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-02T00:00:00Z">
-        Aug 2, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-26/">Training a GAN</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-26T00:00:00Z">
-        Jul 26, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-19/">Finally the bridge works now</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-19T00:00:00Z">
-        Jul 19, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-12/">Cleaning up the bridge</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-12T00:00:00Z">
-        Jul 12, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-5/">Building a bridge</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-05T00:00:00Z">
-        Jul 5, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-21/">Training the segmentation model</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-21T00:00:00Z">
-        Jun 21, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-14/">PCA and semantic segmentation</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-11T00:00:00Z">
-        Jun 11, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-7/">The &#34;EPIC&#34; dataset</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-06T00:00:00Z">
-        Jun 6, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-31/">Finding patterns</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-31T00:00:00Z">
-        May 31, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-24/">Exploring the Movement Database</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-24T00:00:00Z">
-        May 24, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-17/">Hello Openworm</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-17T00:00:00Z">
-        May 17, 2020
-    </time>
-</article>
-
-
-         
-
-         
-
+            </div>
+        </article>
     </main>
-</div><footer class="footer">
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 

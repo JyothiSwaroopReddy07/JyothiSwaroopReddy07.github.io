@@ -4,17 +4,17 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Posts | Awesome Hugo blog</title>
-<meta property="og:title" content="Posts | Awesome Hugo blog" />
-<meta name="twitter:title" content="Posts | Awesome Hugo blog" />
-<meta itemprop="name" content="Posts | Awesome Hugo blog" />
-<meta name="application-name" content="Posts | Awesome Hugo blog" />
+<title itemprop="name">Publishing a PyPI package | Awesome Hugo blog</title>
+<meta property="og:title" content="Publishing a PyPI package | Awesome Hugo blog" />
+<meta name="twitter:title" content="Publishing a PyPI package | Awesome Hugo blog" />
+<meta itemprop="name" content="Publishing a PyPI package | Awesome Hugo blog" />
+<meta name="application-name" content="Publishing a PyPI package | Awesome Hugo blog" />
 <meta property="og:site_name" content="Awesome hugo blog" />
 
-<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
-<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="description" content="Google summer of code week 12">
+<meta itemprop="description" content="Google summer of code week 12" />
+<meta property="og:description" content="Google summer of code week 12" />
+<meta name="twitter:description" content="Google summer of code week 12" />
 
 <meta property="og:locale" content="en-us" />
 <meta name="language" content="en-us" />
@@ -33,15 +33,10 @@
     
     
     
-    <link rel="first" href="/posts/" />
-    <link rel="last" href="/posts/" />
-    
-    
-    
 
     <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2020-08-16T00:00:00Z />
-    <meta property="article:published_time" content=2020-08-16T00:00:00Z />
+    <meta property="og:article:published_time" content=2020-08-09T00:00:00Z />
+    <meta property="article:published_time" content=2020-08-09T00:00:00Z />
 
     
 
@@ -51,16 +46,16 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Posts",
+        "headline": "Publishing a PyPI package",
         "author": {
         "@type": "Person",
         "name": ""
         },
-        "datePublished": "2020-08-16",
-        "description": "",
-        "wordCount":  0 ,
+        "datePublished": "2020-08-09",
+        "description": "Google summer of code week 12",
+        "wordCount":  487 ,
         "mainEntityOfPage": "True",
-        "dateModified": "2020-08-16",
+        "dateModified": "2020-08-09",
         "image": {
         "@type": "imageObject",
         "url": ""
@@ -76,9 +71,7 @@
 
   
 
-  <link rel="canonical" href="https://JyothiSwaroopReddy07.github.io/posts/">
-  <link href="https://JyothiSwaroopReddy07.github.io/posts/index.xml" rel="alternate" type="application/rss+xml" title="Awesome Hugo blog">
-  <link href="https://JyothiSwaroopReddy07.github.io/posts/index.xml" rel="feed" type="application/rss+xml" title="Awesome Hugo blog"><link href="/sass/main.min.0eebb6db90b4ec9f4444ef402f08421ee056025ba860df3d749a9f299d472008.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+  <link rel="canonical" href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-9/"><link href="/sass/main.min.0eebb6db90b4ec9f4444ef402f08421ee056025ba860df3d749a9f299d472008.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
   
 
@@ -159,219 +152,82 @@ stroke-linejoin="round" class="feather feather-home">
     </div>
   </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Posts</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2020</h2>
+        <article>
+            <header class="header">
+                <h1 class="header-title">Publishing a PyPI package</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2020-08-09T00:00:00&#43;00:00" itemprop="datePublished"> Aug 9, 2020 </time>
+                </div>
+            </header>
+            <div class="page-content">
+                <p>First off, this blog post is definitely not an official guide, if you&rsquo;re looking for an official guide, have a look <a href="https://packaging.python.org/tutorials/packaging-projects/">here</a>.</p>
+<p>This blog post is pretty specific to the PyPI package that I authored along with <a href="https://github.com/balicea">Bradly</a> and <a href="https://github.com/ujjwalll">Ujjwall</a>.</p>
+<h2 id="the-project-structure">The project structure:</h2>
+<figure><img src="https://raw.githubusercontent.com/DevoLearn/devolearn/master/images/project_structure.jpg" width="80%"/>
+</figure>
 
-        
+<p>Each of the classes under <code>devolearn</code> have their own folder which would contain all the utils required for that class including the model files.</p>
+<p>For example, the folder <code>embryo_generator_model</code> would look like:</p>
+<pre tabindex="0"><code>├── embryo_generator_model
+    ├── embryo_generator_model.py
+    ├── embryo_generator.pt
+    ├── __init__.py
+</code></pre><h2 id="the-repo-structure-for-pypi">The repo structure for PyPI</h2>
+<pre tabindex="0"><code>devolearn
+├── LICENSE
+├── README.md
+├── devolearn
+│   ├── __init__.py
+│   ├── model_1
+│   │    ├── model_1.py
+│   │    ├── model_1.pt
+│   │    ├── __init__.py
+│   ├── model_2
+│         ├── model_2.py
+│         ├── model_2.pt
+│         ├── __init__.py
+│
+├── setup.py
 
-        
+</code></pre><h2 id="generating-a-distribution-archive">Generating a distribution archive</h2>
+<p>Once the folder was structured, The next objective was to generate distribution packages for the package. These are archives that are uploaded to the Package Index and can be installed by pip.</p>
+<p>For this I had to install the latest versions of setuptools and wheel with:</p>
+<pre tabindex="0"><code>python3 -m pip install --user --upgrade setuptools wheel
 
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-16/">And then there were tests</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-16T00:00:00Z">
-        Aug 16, 2020
-    </time>
-</article>
+</code></pre><p>Then we had to run the following command  in the same directory as <code>setup.py</code>:</p>
+<pre tabindex="0"><code>python3 setup.py sdist bdist_wheel
+</code></pre><p>This command should output a lot of text and once completed should generate two files in the dist directory:</p>
+<pre tabindex="0"><code>dist/
+    devolearn-0.1.9.tar.gz
+    devolearn-0.1.9-py3-none-any.whl
+</code></pre><h2 id="uploading-the-archive">Uploading the archive</h2>
+<p>First, we&rsquo;d have to upload the package to test.pypi.org, and for that we&rsquo;d have to <a href="https://test.pypi.org/account/register/">make</a> an account. Then go to <a href="https://test.pypi.org/manage/account/#api-tokens">this url</a> and create a new API token.</p>
+<p>Then we upload the package using the twine package:</p>
+<pre tabindex="0"><code>python3 -m pip install --user --upgrade twine
+</code></pre><p>And then:</p>
+<pre tabindex="0"><code>python3 -m twine upload --repository testpypi dist/*
+</code></pre><p>When prompted for a username, use <code>__token__</code> and then enter the token value as the password;</p>
+<pre tabindex="0"><code>Uploading distributions to https://test.pypi.org/legacy/
+Enter your username: __token__
+Enter your password: your_token_value
+</code></pre><h2 id="the-problem-with-package-size">The problem with package size</h2>
+<p>In order  to upload a package to test.pypi.org, it had to be under 100 mb, but devolearn was above 150 mb because of the model files. So the workaround was to not include the models in the <code>MANIFEST.in</code> file and downloading the models from GitHub directly using <code>wget</code> from within the package. The models would get downloaded when the user calls the model class for the first time.</p>
+<p><strong>Note:</strong>  <code>MANIFEST.in</code> is a file that can be used to specify the <strong>non</strong> <code>.py</code> files that you&rsquo;d want to include in the python package to be uploaded, for example, I included the <code>scaler.gz</code> file in our manifest file.</p>
+<h2 id="uploading-to-pypi">Uploading to PyPI</h2>
+<p>When you are ready to upload a real package to the Python Package Index you can do much the same as you did above,</p>
+<pre tabindex="0"><code>python3 -m twine upload dist/*
+</code></pre><h2 id="done-and-dusted">Done and dusted</h2>
+<p>This post was basically my own informal guide for uploading a package to PyPI. If you&rsquo;ve read this far, you need to take a break from stalking me so hard.</p>
 
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-9/">Publishing a PyPI package</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-09T00:00:00Z">
-        Aug 9, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-aug-2/">Hello DevoLearn</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-02T00:00:00Z">
-        Aug 2, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-aug-2/">Hello DevoLearn</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-02T00:00:00Z">
-        Aug 2, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-26/">Training a GAN</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-26T00:00:00Z">
-        Jul 26, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-19/">Finally the bridge works now</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-19T00:00:00Z">
-        Jul 19, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-12/">Cleaning up the bridge</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-12T00:00:00Z">
-        Jul 12, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-5/">Building a bridge</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-05T00:00:00Z">
-        Jul 5, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-21/">Training the segmentation model</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-21T00:00:00Z">
-        Jun 21, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-14/">PCA and semantic segmentation</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-11T00:00:00Z">
-        Jun 11, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-7/">The &#34;EPIC&#34; dataset</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-06T00:00:00Z">
-        Jun 6, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-31/">Finding patterns</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-31T00:00:00Z">
-        May 31, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-24/">Exploring the Movement Database</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-24T00:00:00Z">
-        May 24, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-17/">Hello Openworm</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-17T00:00:00Z">
-        May 17, 2020
-    </time>
-</article>
-
-
-         
-
-         
-
+            </div>
+        </article>
     </main>
-</div><footer class="footer">
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 

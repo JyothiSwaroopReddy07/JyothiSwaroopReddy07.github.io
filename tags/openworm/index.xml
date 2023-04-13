@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Awesome Hugo blog</title>
-    <link>https://JyothiSwaroopReddy07.github.io/</link>
-    <description>Recent content in Home on Awesome Hugo blog</description>
+    <title>OpenWorm on Awesome Hugo blog</title>
+    <link>https://JyothiSwaroopReddy07.github.io/tags/openworm/</link>
+    <description>Recent content in OpenWorm on Awesome Hugo blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://JyothiSwaroopReddy07.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 16 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://JyothiSwaroopReddy07.github.io/tags/openworm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>And then there were tests</title>
       <link>https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-16/</link>
@@ -131,17 +131,6 @@
       
       <guid>https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-17/</guid>
       <description>Google Summer of Code | Community bonding period week 1</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://JyothiSwaroopReddy07.github.io/about/</link>
-      <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://JyothiSwaroopReddy07.github.io/about/</guid>
-      <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
-Hugo makes use of a variety of open source projects including:
- https://github.</description>
     </item>
     
   </channel>

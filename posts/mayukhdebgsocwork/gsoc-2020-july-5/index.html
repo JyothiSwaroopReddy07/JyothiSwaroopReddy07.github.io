@@ -4,17 +4,17 @@
 <meta http-equiv="content-type" content="text/html">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title itemprop="name">Posts | Awesome Hugo blog</title>
-<meta property="og:title" content="Posts | Awesome Hugo blog" />
-<meta name="twitter:title" content="Posts | Awesome Hugo blog" />
-<meta itemprop="name" content="Posts | Awesome Hugo blog" />
-<meta name="application-name" content="Posts | Awesome Hugo blog" />
+<title itemprop="name">Building a bridge | Awesome Hugo blog</title>
+<meta property="og:title" content="Building a bridge | Awesome Hugo blog" />
+<meta name="twitter:title" content="Building a bridge | Awesome Hugo blog" />
+<meta itemprop="name" content="Building a bridge | Awesome Hugo blog" />
+<meta name="application-name" content="Building a bridge | Awesome Hugo blog" />
 <meta property="og:site_name" content="Awesome hugo blog" />
 
-<meta name="description" content="Minimal Hugo blog theme with light and dark mode support">
-<meta itemprop="description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta property="og:description" content="Minimal Hugo blog theme with light and dark mode support" />
-<meta name="twitter:description" content="Minimal Hugo blog theme with light and dark mode support" />
+<meta name="description" content="Google summer of code week 7">
+<meta itemprop="description" content="Google summer of code week 7" />
+<meta property="og:description" content="Google summer of code week 7" />
+<meta name="twitter:description" content="Google summer of code week 7" />
 
 <meta property="og:locale" content="en-us" />
 <meta name="language" content="en-us" />
@@ -33,15 +33,10 @@
     
     
     
-    <link rel="first" href="/posts/" />
-    <link rel="last" href="/posts/" />
-    
-    
-    
 
     <meta property="og:type" content="article" />
-    <meta property="og:article:published_time" content=2020-08-16T00:00:00Z />
-    <meta property="article:published_time" content=2020-08-16T00:00:00Z />
+    <meta property="og:article:published_time" content=2020-07-05T00:00:00Z />
+    <meta property="article:published_time" content=2020-07-05T00:00:00Z />
 
     
 
@@ -51,16 +46,16 @@
     {
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Posts",
+        "headline": "Building a bridge",
         "author": {
         "@type": "Person",
         "name": ""
         },
-        "datePublished": "2020-08-16",
-        "description": "",
-        "wordCount":  0 ,
+        "datePublished": "2020-07-05",
+        "description": "Google summer of code week 7",
+        "wordCount":  284 ,
         "mainEntityOfPage": "True",
-        "dateModified": "2020-08-16",
+        "dateModified": "2020-07-05",
         "image": {
         "@type": "imageObject",
         "url": ""
@@ -76,9 +71,7 @@
 
   
 
-  <link rel="canonical" href="https://JyothiSwaroopReddy07.github.io/posts/">
-  <link href="https://JyothiSwaroopReddy07.github.io/posts/index.xml" rel="alternate" type="application/rss+xml" title="Awesome Hugo blog">
-  <link href="https://JyothiSwaroopReddy07.github.io/posts/index.xml" rel="feed" type="application/rss+xml" title="Awesome Hugo blog"><link href="/sass/main.min.0eebb6db90b4ec9f4444ef402f08421ee056025ba860df3d749a9f299d472008.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
+  <link rel="canonical" href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-5/"><link href="/sass/main.min.0eebb6db90b4ec9f4444ef402f08421ee056025ba860df3d749a9f299d472008.css" rel="stylesheet"><link href="/code-highlight.min.706d31975fec544a864cb7f0d847a73ea55ca1df91bf495fd12a177138d807cf.css" rel="stylesheet">
 
   
 
@@ -159,219 +152,40 @@ stroke-linejoin="round" class="feather feather-home">
     </div>
   </nav>
 </div>
-<div class="wrapper list-page">
-    <header class="header">
-        <h1 class="header-title center">Posts</h1>
-    </header>
+
+<div class="wrapper post">
     <main class="page-content" aria-label="Content">
-        
-        
-        <h2 class="post-year">2020</h2>
+        <article>
+            <header class="header">
+                <h1 class="header-title">Building a bridge</h1>
+                
+                <div class="post-meta">
+                    <time datetime="2020-07-05T00:00:00&#43;00:00" itemprop="datePublished"> Jul 5, 2020 </time>
+                </div>
+            </header>
+            <div class="page-content">
+                <p>The bridge that we&rsquo;ll have to build is between the videos and the annotations in the <a href="http://epic.gs.washington.edu/">EPIC dataset</a>, and for that we&rsquo;ll need to train a deep learning model that connects these two. It turned out that it wasn&rsquo;t as straighforward as throwing a bunch of tensors into a model.</p>
+<figure><img src="https://raw.githubusercontent.com/Mayukhdeb/blog/master/content/post/images/july_5/raw_frames.png" width="50%"/>
+</figure>
 
-        
+<p>From the frames like the ones shown above, we&rsquo;ll  have to find the population of various lineages of cells within the embryo.</p>
+<p>The C. elegans embryo contains cells from various lineages which move on to become various body parts during adulthood, and the total population of each lineage depends primarily on time, but there are a few other biological factors as well. The plot below shows how the populations of each lineage varied with time for a single embryo.</p>
+<figure><img src="https://raw.githubusercontent.com/Mayukhdeb/blog/master/content/post/images/july_5/lineage.png" width="60%"/>
+</figure>
 
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-16/">And then there were tests</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-16T00:00:00Z">
-        Aug 16, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-august-9/">Publishing a PyPI package</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-09T00:00:00Z">
-        Aug 9, 2020
-    </time>
-</article>
+<p>The first task was to <a href="https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/embryo_analysis/video_analysis/merging_video_data_with_annotations.ipynb">format the data</a> in a way that can be used to train a model to gain inferences. This mostly involved algorithms that determined the population of each lineage with time from the raw metadata.</p>
+<p>The second problem was with mapping the video with the annotations. The issue was that there were about 130 or so time instances per video, but there were around 40 frames. So I had to write another algorithm that distrubutes these 240 frames on the 130 time instances.</p>
+<p>So now all that was left was to <a href="https://nbviewer.jupyter.org/github/devoworm/GSoC-2020/blob/master/Pre-trained%20Models%20%28DevLearning%29/notebooks/embryo_analysis/video_analysis/estimate_cell_family_population.ipynb">train a deep learning model</a> which would map the frames to the populations. The prediction for each frame of the model is a 1 dimensional tensor which contains the populations of the lineages <code>['A', 'E', 'M', 'P', 'C', 'D', 'Z']</code> in that order.</p>
+<p>When trained on only 2 videos and about 480 frames, these are the results that were obtained:</p>
+<figure><img src="https://raw.githubusercontent.com/Mayukhdeb/blog/master/content/post/images/july_5/preds.png" width="80%"/>
+</figure>
 
 
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-aug-2/">Hello DevoLearn</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-02T00:00:00Z">
-        Aug 2, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-aug-2/">Hello DevoLearn</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-08-02T00:00:00Z">
-        Aug 2, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-26/">Training a GAN</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-26T00:00:00Z">
-        Jul 26, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-19/">Finally the bridge works now</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-19T00:00:00Z">
-        Jul 19, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-12/">Cleaning up the bridge</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-12T00:00:00Z">
-        Jul 12, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-july-5/">Building a bridge</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-07-05T00:00:00Z">
-        Jul 5, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-21/">Training the segmentation model</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-21T00:00:00Z">
-        Jun 21, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-14/">PCA and semantic segmentation</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-11T00:00:00Z">
-        Jun 11, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-june-7/">The &#34;EPIC&#34; dataset</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-06-06T00:00:00Z">
-        Jun 6, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-31/">Finding patterns</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-31T00:00:00Z">
-        May 31, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-24/">Exploring the Movement Database</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-24T00:00:00Z">
-        May 24, 2020
-    </time>
-</article>
-
-
-        
-
-        <article class="post-item">
-    <h4 class="post-item-title">
-        <a href="https://JyothiSwaroopReddy07.github.io/posts/mayukhdebgsocwork/gsoc-2020-may-17/">Hello Openworm</a>
-    </h4>
-    
-    
-    <time class="post-item-meta" datetime="2020-05-17T00:00:00Z">
-        May 17, 2020
-    </time>
-</article>
-
-
-         
-
-         
-
+            </div>
+        </article>
     </main>
-</div><footer class="footer">
+</div>
+<footer class="footer">
     <span class="footer_item"> </span>
     &nbsp;
 
